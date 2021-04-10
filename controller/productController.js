@@ -9,7 +9,9 @@ exports.createProduct =
  {
  
   const product = new Product(req.body);
- 
+
+  product.photo = req.file.path;  // for upload img
+
   product.save((err, category) => 
   {
     if (err) 
